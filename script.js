@@ -2,6 +2,8 @@ window.onload = function() {
 	const blocksArray = []; 
 	blocksArray.length = 100;
 	var lastMoveIndex; 
+	var nextMove = document.getElementById('nextMove');
+	var winner = document.getElementById("winner");
 				
 	for (let i=0; i<=99; i++){		
 		document.getElementById('game').innerHTML += '<div class="block"></div>';
@@ -17,8 +19,10 @@ window.onload = function() {
 		if (event.target.className == "block") {//проверяем попадание в блок
 			if (move % 2==0) { 
 				event.target.innerHTML = "X";//четный ход, Х
+				nextMove.innerHTML = "X";
 			} else {          
 				event.target.innerHTML = "0";//нечетный ход, 0
+				nextMove.innerHTML = "0";
 			};					
 		}	
 		move++;
@@ -59,7 +63,8 @@ window.onload = function() {
 		 	blocksArray[lastMoveIndex]=="X" && blocksArray[lastMoveIndex-9]=="X" && blocksArray[lastMoveIndex-18]=="X" && blocksArray[lastMoveIndex-27]=="X" && blocksArray[lastMoveIndex+9]=="X" ||
 		 	blocksArray[lastMoveIndex]=="X" && blocksArray[lastMoveIndex-9]=="X" && blocksArray[lastMoveIndex+9]=="X" && blocksArray[lastMoveIndex+18]=="X" && blocksArray[lastMoveIndex+27]=="X" ||
 		 	blocksArray[lastMoveIndex]=="X" && blocksArray[lastMoveIndex-9]=="X" && blocksArray[lastMoveIndex-18]=="X" && blocksArray[lastMoveIndex+9]=="X" && blocksArray[lastMoveIndex+18]=="X") {
-				alert("Игрок 1 выиграл");
+					winner.innerHTML = "X - winner!";
+					winner.style.display = "block";
 		}; 
 		if (//горизонталь
 			blocksArray[lastMoveIndex]=="0" && blocksArray[lastMoveIndex-1]=="0" && blocksArray[lastMoveIndex-2]=="0" && blocksArray[lastMoveIndex-3]=="0" && blocksArray[lastMoveIndex-4]=="0" ||
@@ -84,7 +89,8 @@ window.onload = function() {
 		 	blocksArray[lastMoveIndex]=="0" && blocksArray[lastMoveIndex-9]=="0" && blocksArray[lastMoveIndex-18]=="0" && blocksArray[lastMoveIndex-27]=="0" && blocksArray[lastMoveIndex+9]=="0" ||
 		 	blocksArray[lastMoveIndex]=="0" && blocksArray[lastMoveIndex-9]=="0" && blocksArray[lastMoveIndex+9]=="0" && blocksArray[lastMoveIndex+18]=="0" && blocksArray[lastMoveIndex+27]=="0" ||
 		 	blocksArray[lastMoveIndex]=="0" && blocksArray[lastMoveIndex-9]=="0" && blocksArray[lastMoveIndex-18]=="0" && blocksArray[lastMoveIndex+9]=="0" && blocksArray[lastMoveIndex+18]=="0") {
-				alert("Игрок 2 выиграл");
+				winner.innerHTML = "0 - winner!";
+				winner.style.display = "block";
 		}
 		return
 	};

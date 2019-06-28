@@ -2,6 +2,8 @@
 	width: 500px;
 	height: 500px;
 	border: 1px solid gray;
+	margin-top: 20px;
+	margin-left: 20px;
 }
 
 .block {
@@ -13,4 +15,25 @@
 	text-align: center;
 	font-size: 40px;
 	line-height: 50px;
+}
+
+#move {
+	position: absolute;
+	top: 30px;
+	left: 570px;
+	font-size: 30px;
+	font-weight: bolder;	
+}
+
+#nextMove {
+	padding-left: 10px;
+}
+
+#winner {
+	font-size: 100px;
+	color: purple;
+	position: absolute;
+	left: 570px;
+	top: 200px;
+	display: none;
 }
