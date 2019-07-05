@@ -19,10 +19,10 @@ window.onload = function() {
 		if (event.target.className == "block") {//проверяем попадание в блок
 			if (move % 2==0) { 
 				event.target.innerHTML = "X";//четный ход, Х
-				nextMove.innerHTML = "X";
+				nextMove.innerHTML = "0";
 			} else {          
 				event.target.innerHTML = "0";//нечетный ход, 0
-				nextMove.innerHTML = "0";
+				nextMove.innerHTML = "X";
 			};					
 		}	
 		move++;
@@ -106,14 +106,4 @@ window.onload = function() {
 		};		
 		return;	
 	}
-	
-	//function checkWinner(event) {}
-
-	
-
-
-	
-
-	
-
 }
